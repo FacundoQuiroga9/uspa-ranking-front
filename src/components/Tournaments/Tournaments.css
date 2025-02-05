@@ -1,0 +1,51 @@
+.page-title {
+  font-size: 2.5rem;
+}
+
+.page-subtitle {
+  color: #0A3161;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.mobile-inputs {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  align-items: center;
+}
+
+.tournament-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+}
+
+.tournament-card-wrapper {
+  width: 300px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
