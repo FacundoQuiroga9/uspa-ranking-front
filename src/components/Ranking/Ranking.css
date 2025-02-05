@@ -1,0 +1,262 @@
+/* Estilos generales */
+.container {
+  padding: 1rem;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+  table-layout: fixed;
+}
+
+thead tr {
+  background-color: #0A3161;
+  color: white;
+  font-size: 0.7rem;
+}
+
+th {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+th:last-child {
+  padding: 0 1rem 0 0;
+}
+
+th:nth-child(2) {
+  text-align: left;
+}
+
+tbody {
+  font-size: 0.7rem;
+}
+
+tbody tr {
+  background-color: #B31942;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  display: table-row;
+  margin-bottom: 0.5rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+  color: #0A3161;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(even):hover {
+  background-color: rgb(239, 239, 239);
+  color: #0A3161;
+}
+
+.clickable-row:hover {
+  cursor: pointer;
+  background-color: #9c0f34;
+}
+
+td {
+  padding: 1rem 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+td:nth-child(2) {
+  text-align: left;
+}
+
+td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.pagination a {
+  color: #0A3161;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 0 0.25rem;
+  border: 1px solid #0A3161;
+  border-radius: 4px;
+}
+
+.pagination a:hover {
+  background-color: #0A3161;
+  color: white;
+}
+
+.pagination .active {
+  background-color: #0A3161;
+  color: white;
+}
+
+/* Botones de filtro */
+.btn-men,
+.btn-women {
+  background-color: transparent;
+  border: 1px solid #0A3161;
+  color: #0A3161;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-men.active,
+.btn-women.active {
+  background-color: #0A3161;
+  color: white;
+}
+
+.btn-men:hover,
+.btn-women:hover {
+  background-color: #0A3161;
+  color: white;
+}
+
+/* Botón de búsqueda */
+.btn-search {
+  background-color: #0A3161;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-search i {
+  font-size: 1rem;
+}
+
+.btn-search:hover {
+  background-color: #072a4f;
+}
+
+/* Input de filtro */
+.filter-input {
+  border: 1px solid #0A3161;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+/* Botón para agregar jugador */
+.btn-add-player {
+  background-color: #B31942;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-add-player:hover {
+  background-color: #9c0f34;
+}
+
+/* Media Queries para adaptabilidad */
+@media (min-width: 30em) {
+  h1 {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  thead tr {
+    font-size: 0.8rem;
+  }
+
+  tbody {
+    font-size: 0.8rem;
+  }
+
+  th,
+  td {
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  thead tr {
+    font-size: 0.9rem;
+  }
+
+  tbody {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (min-width: 64em) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  thead tr {
+    font-size: 1.2rem;
+  }
+
+  tbody {
+    font-size: 1.2rem;
+  }
+
+  th,
+  td {
+    padding: 2rem 0;
+  }
+}
+
+@media (min-width: 75em) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  thead tr {
+    font-size: 1.5rem;
+  }
+
+  tbody {
+    font-size: 1.5rem;
+  }
+
+  th,
+  td {
+    padding: 1.5rem 0;
+  }
+}

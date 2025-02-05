@@ -1,13 +1,11 @@
-
-import './App.css'
+import Ranking from './components/Ranking/Ranking';
 
 function App() {
-
   return (
-    <>
-      Hola
-    </>
-  )
+    <div className="App">
+      <Ranking />
+    </div>
+  );
 }
 
-export default App
+export default App;
