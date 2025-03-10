@@ -1,0 +1,189 @@
+.tournament-show-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* Título centrado del torneo */
+.tournament-title-center {
+  font-size: 2.5rem;
+  color: #B31942;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Botones de administración */
+.admin-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.edit-button, .add-category-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.edit-button {
+  background-color: #0A3161;
+  color: white;
+}
+
+.add-category-button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.edit-button:hover {
+  background-color: #08244D;
+}
+
+.add-category-button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Contenedor principal */
+.tournament-show-container {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Imagen del torneo */
+.tournament-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.tournament-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Información del torneo */
+.tournament-details {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.club-name {
+  font-size: 1.8rem;
+  color: #B31942;
+  margin-bottom: 0.5rem;
+}
+
+.tournament-meta {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Sección de categorías */
+.categories-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.category-group {
+  flex: 1;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.men-title {
+  color: #0A3161;
+}
+
+.women-title {
+  color: #B31942;
+}
+
+.category-card {
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+  width: 80%;
+  text-align: center;
+}
+
+.men-card {
+  background-color: #0A3161;
+  color: white;
+}
+
+.women-card {
+  background-color: #B31942;
+  color: white;
+}
+
+.no-categories {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+/* Descripción del torneo */
+.tournament-description {
+  margin-top: 2rem;
+  max-width: 1100px;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.tournament-description p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tournament-show-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tournament-image {
+    max-width: 100%;
+  }
+
+  .tournament-details {
+    padding: 1.5rem;
+  }
+
+  .categories-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-card {
+    width: 100%;
+  }
+}
