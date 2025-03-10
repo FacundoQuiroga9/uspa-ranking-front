@@ -1,0 +1,49 @@
+.add-category-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.add-category-form h3 {
+  color: #B31942;
+  margin-bottom: 10px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-row label {
+  font-weight: bold;
+}
+
+.form-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-category-btn {
+  padding: 8px 12px;
+  background-color: #0A3161;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-category-btn:hover {
+  background-color: #08244D;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
