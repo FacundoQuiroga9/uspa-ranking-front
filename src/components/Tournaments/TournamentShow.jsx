@@ -1,17 +1,24 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./TournamentShow.css";
+import useCategories from "../../hooks/useCategories";
+import AddCategoryForm from "../Categories/AddCategoryForm";
 
 const TournamentShow = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [tournament, setTournament] = useState(null);
 
+  // Hook para manejar categorías
+  const { categories, fetchCategories, addCategory } = useCategories(id);
+
   useEffect(() => {
     fetch(`http://localhost:3000/api/v1/tournaments/${id}`)
       .then((response) => response.json())
       .then((data) => setTournament(data))
       .catch((error) => console.error("Error fetching tournament:", error));
+
+    fetchCategories(); // Cargar categorías cuando se monta el componente
   }, [id]);
 
   if (!tournament) {
@@ -25,6 +32,17 @@ const TournamentShow = () => {
     year: "numeric",
   });
 
+  // Ordenar categorías en el orden correcto
+  const categoryOrder = ["1st Division", "2nd Division", "3rd Division", "4th Division"];
+
+  const menCategories = categories
+    .filter((cat) => cat.gender === "Men")
+    .sort((a, b) => categoryOrder.indexOf(a.name) - categoryOrder.indexOf(b.name));
+
+  const womenCategories = categories
+    .filter((cat) => cat.gender === "Women")
+    .sort((a, b) => categoryOrder.indexOf(a.name) - categoryOrder.indexOf(b.name));
+
   return (
     <div className="tournament-show-wrapper">
       {/* Nombre del torneo centrado */}
@@ -35,10 +53,10 @@ const TournamentShow = () => {
         <button className="edit-button" onClick={() => navigate(`/tournaments/${id}/edit`)}>
           EDIT
         </button>
-        <button className="add-category-button" onClick={() => navigate(`/tournaments/${id}/categories/new`)}>
-          ADD CATEGORY
-        </button>
       </div>
+
+      {/* Formulario para agregar categorías */}
+      <AddCategoryForm addCategory={addCategory} existingCategories={categories} />
 
       <div className="tournament-show-container">
         {/* Imagen del torneo */}
@@ -50,9 +68,7 @@ const TournamentShow = () => {
         <div className="tournament-details justify-content-start">
           <div className="d-flex justify-content-between">
             <h2 className="club-name">{tournament.location}</h2>
-            <p className="tournament-meta">
-              {formattedDate}
-            </p>
+            <p className="tournament-meta">{formattedDate}</p>
           </div>
 
           <p className="tournament-meta">
@@ -63,9 +79,11 @@ const TournamentShow = () => {
           <div className="categories-section">
             <div className="category-group">
               <h3 className="category-title men-title">MEN</h3>
-              {tournament.men_categories?.length > 0 ? (
-                tournament.men_categories.map((category, index) => (
-                  <div key={index} className="category-card men-card">{category}</div>
+              {menCategories.length > 0 ? (
+                menCategories.map((category) => (
+                  <div key={category.id} className="category-card men-card">
+                    {category.name}
+                  </div>
                 ))
               ) : (
                 <p className="no-categories">No categories available</p>
@@ -74,9 +92,11 @@ const TournamentShow = () => {
 
             <div className="category-group">
               <h3 className="category-title women-title">WOMEN</h3>
-              {tournament.women_categories?.length > 0 ? (
-                tournament.women_categories.map((category, index) => (
-                  <div key={index} className="category-card women-card">{category}</div>
+              {womenCategories.length > 0 ? (
+                womenCategories.map((category) => (
+                  <div key={category.id} className="category-card women-card">
+                    {category.name}
+                  </div>
                 ))
               ) : (
                 <p className="no-categories">No categories available</p>
